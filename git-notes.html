@@ -40,6 +40,22 @@ git cherry-pick d6982b2 c68d52b 20b7e24
 
 A real life use case of cherry-pick is that we can choose to pick specific commits from the different branch instead of merging all of them. 
 
+## Branch
+
+_Branches as Silos_
+
+![branches as silos](http://git-scm.com/figures/18333fig0319-tn.png "branches as silos")
+
+_Topic Branches_
+
+![topic branches](http://git-scm.com/figures/18333fig0320-tn.png "topic branches")
+
+Now, let's say you decide you like the second solution to your issue best (iss91v2); and you showed the dumbidea branch to your coworkers, and it turns out to be genius. You can throw away the original iss91 branch (losing commits C5 and C6) and merge in the other two. Your history then looks like: 
+
+![topic branches after merged](http://git-scm.com/figures/18333fig0321-tn.png "topic branches after merged")
+
+See a real life example at [Contributing to a Project](http://git-scm.com/book/ch5-2.html).
+
 ## Configuration
  
 _Review Config_
