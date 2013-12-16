@@ -21,7 +21,24 @@ See [The Git Object Model](http://schacon.github.io/gitbook/1_the_git_object_mod
 * [Git Immersion](file:///C:/Users/dt77850/Documents/Git/tutorials/gitimmersion/git_tutorial/html/lab_01.html)
 * [Interactive Git](http://pcottle.github.io/learnGitBranching/?NODEMO)
 
-Starts Git basic with Git Immersion (1 - 25). Then continue with Moving Work Around on learnGitBranching. 
+Starts Git basic with Git Immersion (1 - 25). 
+
+#### Add - Interactive Staging
+
+``git add -i``
+
+See [Git Tools - Interactive Staging](http://git-scm.com/book/mk/Git-Tools-Interactive-Staging)
+
+Then continue with Moving Work Around on learnGitBranching. 
+
+### cherry-pick 
+
+```
+git checkout another_branch #or checkout HEAD~3 (ancestors)
+git cherry-pick d6982b2 c68d52b 20b7e24
+```
+
+A real life use case of cherry-pick is that we can choose to pick specific commits from the different branch instead of merging all of them. 
 
 ## Configuration
  
