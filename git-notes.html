@@ -21,6 +21,33 @@ See [The Git Object Model](http://schacon.github.io/gitbook/1_the_git_object_mod
 * [Git Immersion](file:///C:/Users/dt77850/Documents/Git/tutorials/gitimmersion/git_tutorial/html/lab_01.html)
 * [Interactive Git](http://pcottle.github.io/learnGitBranching/?NODEMO)
 
+## Configuration
+ 
+_Review Config_
+```
+git config --list
+git config --list --global
+```
+ 
+### Merge Tool
+ 
+_As KDiff3_
+```
+git config --global merge.tool kdiff3
+git config --global mergetool.kdiff3.cmd '"C:/Program Files (x86)/DST/SCM/KDiff3/kdiff3" $BASE $LOCAL $REMOTE $MERGED'
+```
+ 
+_As Tortoise Merge_
+```
+git config --global merge.tool tortoisemerge
+git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'
+```
+ 
+_Edit Configuration Directly_
+```
+subl ~/.gitconfig
+```
+
 </xmp>
  
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
