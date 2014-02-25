@@ -8,7 +8,7 @@
 
 1. Distributed
 2. Fast
-3. Safe. 
+3. Safe 
  
 ## Snapshots
 ![Normal VCS](http://git-scm.com/figures/18333fig0104-tn.png "Normal VCS")
@@ -22,6 +22,13 @@ See [The Git Object Model](http://schacon.github.io/gitbook/1_the_git_object_mod
 ## States
  
 ![Git States](http://graph1zzlle.github.io/images/posts/git-commit-workflow.png "Git States")
+
+### Log
+
+git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='15 minutes ago'
+git log --pretty=oneline --until='5 days ago'
+git log --grep='^Init'    # grep does take regex!
 
 ### Diff
 
