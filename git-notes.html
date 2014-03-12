@@ -10,7 +10,7 @@
 2. Fast
 3. Safe 
  
-## Snapshots
+## Snapshots, Not Revision
 ![Normal VCS](http://git-scm.com/figures/18333fig0104-tn.png "Normal VCS")
  
 ![Git](http://git-scm.com/figures/18333fig0105-tn.png "Git")
@@ -19,16 +19,69 @@ After all, git tracks contents and not filenames. When you add a file to your re
  
 See [The Git Object Model](http://schacon.github.io/gitbook/1_the_git_object_model.html) for more information.
  
-## States
+## States (Modified > Staged > Committed)
  
 ![Git States](http://graph1zzlle.github.io/images/posts/git-commit-workflow.png "Git States")
 
+## Git Has Integrity
+
+A SHA-1 hash looks something like this:  ```24b9da6552252987aa493b52f8696cd6d3b00373```
+
+_Try_ the following commands, then we'll see how the hash is presented.
+```
+git init
+vi README.md
+git commit -am "Init."
+git log
+```
+
+## Configuration
+ 
+See [Git Setup](http://git-scm.com/book/en/Getting-Started-First-Time-Git-Setup)
+
+```
+git config --global user.name "dtXXXXX"
+git config --global user.email manat.lertpeetipat@dstws.com
+```
+
+### Editor Tool
+```
+git config --global core.editor emacs
+```
+
+### Merge Tool
+ 
+_As KDiff3_
+```
+git config --global merge.tool kdiff3
+git config --global mergetool.kdiff3.cmd '"C:/Program Files (x86)/DST/SCM/KDiff3/kdiff3" $BASE $LOCAL $REMOTE $MERGED'
+```
+ 
+_As Tortoise Merge_
+```
+git config --global merge.tool tortoisemerge
+git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'
+```
+ 
+_Edit Configuration Directly_
+```
+subl ~/.gitconfig
+```
+
+_Review Config_
+```
+git config --list
+git config --list --global
+```
+
 ### Log
 
+```
 git log --pretty=oneline --max-count=2
 git log --pretty=oneline --since='15 minutes ago'
 git log --pretty=oneline --until='5 days ago'
 git log --grep='^Init'    # grep does take regex!
+```
 
 ### Diff
 
@@ -83,6 +136,13 @@ See a real life example at [Contributing to a Project](http://git-scm.com/book/c
 
 See [Basic Branching and Merging](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging).
 
+```
+git branch
+git branch -r
+git branch -a
+git branch -v
+```
+
 ### Rebasing
 
 See [Rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing).
@@ -91,32 +151,6 @@ See [Rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing).
 
 See [Stashing](http://git-scm.com/book/en/Git-Tools-Stashing).
 
-## Configuration
- 
-_Review Config_
-```
-git config --list
-git config --list --global
-```
- 
-### Merge Tool
- 
-_As KDiff3_
-```
-git config --global merge.tool kdiff3
-git config --global mergetool.kdiff3.cmd '"C:/Program Files (x86)/DST/SCM/KDiff3/kdiff3" $BASE $LOCAL $REMOTE $MERGED'
-```
- 
-_As Tortoise Merge_
-```
-git config --global merge.tool tortoisemerge
-git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'
-```
- 
-_Edit Configuration Directly_
-```
-subl ~/.gitconfig
-```
 
 </xmp>
  
